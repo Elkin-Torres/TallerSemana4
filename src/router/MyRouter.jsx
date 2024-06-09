@@ -6,8 +6,8 @@ import Error from "../components/Error";
 const MyRouter = () => {
   return (
     <Routes>
-      <Route path="/welcome" element={<Welcome />} />
-      <Route path="bill" element={<App />} />
+      <Route path="/" element={<Welcome />} />
+      <Route path="/bill" element={<App />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );
