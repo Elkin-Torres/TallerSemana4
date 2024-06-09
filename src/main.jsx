@@ -2,16 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import "./style/styles.css";
-import { BrowserRouter } from "react-router-dom";
-import MyRouter from "./router/MyRouter";
 import { store } from "./store";
+import Welcome from "./components/Welcome";
+import App from "./components/App";
+import Error from "./components/Error";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+
+const router = createHashRouter([
+  { path: "/", element: <Welcome />, errorElement: <Error /> },
+  { path: "/bill", element: <App /> },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <MyRouter />
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
