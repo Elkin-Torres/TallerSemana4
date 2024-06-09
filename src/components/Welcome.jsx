@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 
-
 const Welcome = () => {
   return (
     <div>
       <div>Welcome</div>
-      <Link to={"/factura"} >
-      <button>Registrar factura</button>
+      <Link to={"/bill"}>
+        <button>Registrar factura</button>
       </Link>
-
-    </div> 
-  )
-}
+    </div>
+  );
+};
 
 export default Welcome;

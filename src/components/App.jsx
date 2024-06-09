@@ -1,31 +1,26 @@
-import { useEffect } from 'react';
-import BillForm from './BillForm.jsx';
-import ProductsTable from './ProductsTable.jsx';
-import Values from './Values.jsx';
-import { useDispatch, useSelector } from 'react-redux';
-import { calculate } from '../features/formSlice.js';
+import { useEffect } from "react";
+import BillForm from "./BillForm.jsx";
+import ProductsTable from "./ProductsTable.jsx";
+import Values from "./Values.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { calculate } from "../features/formSlice.js";
 
-
-
-function App() {
-
+const App = () => {
   const dispatch = useDispatch();
 
   const { products } = useSelector((store) => store.infoForm);
 
   useEffect(() => {
-
-dispatch(calculate());
-
+    dispatch(calculate());
   }, [products]);
 
   return (
     <>
-      <BillForm/>
+      <BillForm />
       <ProductsTable />
-      <Values/>
+      <Values />
     </>
-  )
-}
+  );
+};
 
 export default App;
